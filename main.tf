@@ -11,25 +11,19 @@ provider "harness" {
   api_key = var.harness_api_key
 }
 
-resource "harness_git_connector" "mygitconnector" {
-  name               = "mygitconnector" 
-  url                = "https://github.com/Kpavithra080/terraform-connector"  # GitHub repo URL
-  url_type           = "REPO"  
-  generate_webhook_url = true  
+resource "harness_platform_connector_github" "test" {
+  identifier  = "githubtest"
+  name        = "harnessgithub"
+  description = "test"
+  tags        = ["foo:bar"]
 
-  authentication {
-    type = "Http"  
-    spec {
-      type = "UsernameToken"  
-      spec {
-        username = "Kpavithra080"  # GitHub username
-        token_ref = "harnesssecret"  # Secret reference for GitHub token (stored in Harness Secret Manager)
-      }
+  url                = "https://github.com/Kpavithra080"
+  connection_type    = "Account"
+  validation_repo    = "https://github.com/Kpavithra080/terraform-connector"
+  credentials {
+    http {
+      username  = "Kpavithra080"
+      token_ref = "harnesssecret.id"
     }
   }
-
-  execute_on_delegate   = false  
-  proxy                 = false  
-  ignore_test_connection = false  
-
 }
