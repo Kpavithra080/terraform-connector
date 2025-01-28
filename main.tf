@@ -12,7 +12,7 @@ provider "harness" {
 }
 
 resource "harness_platform_connector_github" "test" {
-  identifier  = "githubtest"
+  identifier  = "githubtesting"
   name        = "harnessgithub"
   description = "test"
   tags        = ["foo:bar"]
