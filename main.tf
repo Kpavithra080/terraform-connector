@@ -12,16 +12,15 @@ provider "harness" {
 }
 
 resource "harness_git_connector" "mygitconnector" {
-  name               = "gitconnector"  # Connector name
-  type               = "Github"  # GitHub connector type
+  name               = "mygitconnector" 
   url                = "https://github.com/Kpavithra080/terraform-connector"  # GitHub repo URL
-  url_type           = "REPO"  # Type of URL (Repo)
-  generate_webhook_url = true  # Optionally generate a webhook URL
+  url_type           = "REPO"  
+  generate_webhook_url = true  
 
   authentication {
-    type = "Http"  # Authentication method
+    type = "Http"  
     spec {
-      type = "UsernameToken"  # Authentication type (using username and token)
+      type = "UsernameToken"  
       spec {
         username = "Kpavithra080"  # GitHub username
         token_ref = "harnesssecret"  # Secret reference for GitHub token (stored in Harness Secret Manager)
@@ -29,7 +28,8 @@ resource "harness_git_connector" "mygitconnector" {
     }
   }
 
-  execute_on_delegate   = false  # Do not execute on delegate
-  proxy                 = false  # No proxy
-  ignore_test_connection = false  # Do not ignore the test connection
+  execute_on_delegate   = false  
+  proxy                 = false  
+  ignore_test_connection = false  
+
 }
