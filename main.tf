@@ -11,10 +11,10 @@ provider "harness" {
   platform_api_key = var.harness_api_key
 }
 
-resource "harness_platform_connector_github" "test" {
+resource "harness_platform_connector_github" "harnessgithub" {
   identifier  = "githubtesting"
   name        = "harnessgithub"
-  description = "test"
+  description = "harnessgithub"
   tags        = ["foo:bar"]
 
   url                = "https://github.com/Kpavithra080"
