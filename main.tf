@@ -12,32 +12,32 @@ provider "harness" {
 }
 
 resource "harness_git_connector" "mygitconnector" {
-  name                 = "mygitconnector"  # Connector name
-  identifier           = "gitconnector"  # Connector identifier (same as name in this case)
-  description          = ""  # You can leave the description empty if not needed
-  account_identifier   = "_jMhMFzbSJqFP9Ak93S4eg"  # The account identifier from Harness
-  org_identifier       = "default"  # Organization identifier
-  project_identifier   = "connector"  # Project identifier
+  name                 = "mygitconnector"  
+  identifier           = "mygitconnector"  
+  description          = "" 
+  account_identifier   = "_jMhMFzbSJqFP9Ak93S4eg"  
+  org_identifier       = "default" 
+  project_identifier   = "connector"  
 
   spec {
     url                  = "https://github.com/Kpavithra080/terraform-connector"  # GitHub repository URL
-    type                 = "Repo"  # Git repository type
+    type                 = "Repo" 
 
     authentication {
-      type = "Http"  # HTTP authentication method
+      type = "Http"  
 
       spec {
-        type = "UsernameToken"  # Authentication type
+        type = "UsernameToken"  
 
         spec {
-          username = "Kpavithra080"  # GitHub username
-          token_ref = "harnesssecret"  # Secret reference for GitHub token
+          username = "Kpavithra080"  
+          token_ref = "harnesssecret" 
         }
       }
     }
 
-    execute_on_delegate   = false  # Do not execute on delegate
-    proxy                 = false  # No proxy
-    ignore_test_connection = false  # Test connection is not ignored
+    execute_on_delegate   = false  
+    proxy                 = false  
+    ignore_test_connection = false 
   }
 }
