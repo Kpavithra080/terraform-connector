@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "harness" {
-  api_key = var.harness_api_key
+  platform_api_key = var.harness_api_key
 }
 
 resource "harness_platform_connector_github" "test" {
