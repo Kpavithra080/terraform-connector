@@ -16,7 +16,7 @@ resource "harness_git_connector" "github_connector" {
   url                  = "https://github.com/Kpavithra080/terraform-connector.git"  # Your GitHub repository URL
   branch               = "main"  
   generate_webhook_url = false
-  secret_manager_id    = harness_secret_manager.harnesssecret.id
+  
   
   url_type             = "REPO"  
   username             = "Kpavithra080"
