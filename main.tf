@@ -17,9 +17,8 @@ resource "harness_git_connector" "github_connector" {
   branch               = "main"  
   generate_webhook_url = false
   secret_manager_id    = harness_secret_manager.harnesssecret.id
-  password_secret_id   = harness_encrypted_text.github_token.id  
-
+  
   url_type             = "REPO"  
   username             = "Kpavithra080"
-  
+
 }
