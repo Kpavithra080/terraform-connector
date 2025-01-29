@@ -25,8 +25,5 @@ resource "harness_platform_connector_github" "harnessgithub" {
       username  = "Kpavithra080"
       token_ref = "harnesssecret.id"
     }
-    api_authentication {
-    token_ref = "harnesstoken.id"
-  }
   }
 }
